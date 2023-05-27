@@ -68,6 +68,16 @@ void MainWindow::mousePressEvent(QMouseEvent *event){
 	}
 	strFlagGreen=QString::number(flagGreen);
 	flagGreenLabel->setText("flagGreen: "+strFlagGreen);
+	
+	QString strFlagRed;
+	if ((xMouse>leftButtonRed) && (xMouse<leftButtonRed+widthButtonGreen) && (yMouse>topButtonGreen) && (yMouse<topButtonGreen+heightButtonGreen)){
+		flagRed=1;
+	}
+	else {
+		flagRed=0;
+	}
+	strFlagRed=QString::number(flagRed);
+	flagRedLabel->setText("flagRed: "+strFlagRed);
 }
 
 void MainWindow::paintEvent(QPaintEvent *){
