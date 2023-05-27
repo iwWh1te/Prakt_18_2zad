@@ -1,11 +1,11 @@
 #include <QtWidgets>
 int xMouse=0;  int yMouse=0;
 int xGlobal=0; int yGlobal=0;
-int leftButtonGreen=150;
-int topButtonGreen=220;
+int leftButtonGreen=150; int leftButtonRed=260;
+int topButtonGreen=220; 
 int widthButtonGreen=100;
 int heightButtonGreen=50;
-int flagGreen=0;
+int flagGreen=0; int flagRed=0;
 
 class MainWindow:public QMainWindow{
 	public:
@@ -70,6 +70,10 @@ void MainWindow::paintEvent(QPaintEvent *){
 	painter.setPen(QPen(Qt::green,4,Qt::SolidLine,Qt::RoundCap));
 	painter.setBrush(QBrush(Qt::white,Qt::NoBrush));
 	painter.drawRect(leftButtonGreen,topButtonGreen,widthButtonGreen,heightButtonGreen);
+	
+	painter.setPen(QPen(Qt::red,4,Qt::SolidLine,Qt::RoundCap));
+	painter.setBrush(QBrush(Qt::white,Qt::NoBrush));
+	painter.drawRect(leftButtonRed,topButtonGreen,widthButtonGreen,heightButtonGreen);
 }
 
 int main(int argc,char *argv[]){
