@@ -14,7 +14,7 @@ class MainWindow:public QMainWindow{
 		void paintEvent(QPaintEvent *event);
 	private:
 		QLabel *xLabel, *yLabel;
-		QLabel *flagGreenLabel;
+		QLabel *flagGreenLabel,*flagRedLabel;
 };
 
 MainWindow::MainWindow(){
@@ -36,6 +36,11 @@ MainWindow::MainWindow(){
 	flagGreenLabel->setGeometry(150,245,850,120);
 	flagGreenLabel->setFont(labelFont);
 	flagGreenLabel->setText("flagGreen : ");
+	
+	flagRedLabel = new QLabel(this);
+	flagRedLabel->setGeometry(150,310,850,120);
+	flagRedLabel->setFont(labelFont);
+	flagRedLabel->setText("flagRed : ");
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event){
